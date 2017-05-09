@@ -2,7 +2,11 @@
   "name": "awsm3/yii2-repository",
   "description": "Repository implementation in Yii2",
   "type": "library",
-  "keywords": ["yii2","repository pattern","design pattern"],
+  "keywords": [
+    "yii2",
+    "repository pattern",
+    "design pattern"
+  ],
   "license": "MIT",
   "authors": [
     {
@@ -15,19 +19,15 @@
     }
   ],
   "require": {
-    "php" : "~7.0",
     "yiisoft/yii2": "*"
   },
-
   "suggest": {
     "yiisoft/yii2-mongodb": "Needed if you want to use MongoDB as your dbms instead of relational dbms"
   },
-
   "autoload": {
     "psr-4": {
       "Awsm3\\Yii2Repository\\": "src/"
     }
   },
-
   "minimum-stability": "stable"
 }
