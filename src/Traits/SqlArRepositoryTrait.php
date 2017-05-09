@@ -131,6 +131,10 @@ trait SqlArRepositoryTrait
         $this->columns();
         $this->orderBy($this->primaryKey, $this->desc);
 
+        if (empty($this->modelClass)) {
+            $this->modelClass = get_class($this->model);
+        }
+
         $this->connection = Yii::$app->db;
         $this->query = $this->model->find();
 
