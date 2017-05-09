@@ -279,7 +279,7 @@ trait SqlArRepositoryTrait
         }
 
         $this->connection->createCommand()
-            ->batchInsert($modelClassName::tableName(), $modelClassName->attributes(), $data)->execute();
+            ->batchInsert($modelClassName::tableName(), $model->attributes(), $data)->execute();
     }
 
 
