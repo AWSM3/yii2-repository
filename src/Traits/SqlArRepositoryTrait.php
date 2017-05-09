@@ -282,6 +282,32 @@ trait SqlArRepositoryTrait
             ->batchInsert($modelClassName::tableName(), $model->attributes(), $data)->execute();
     }
 
+    /**
+     *
+     * @param array $data
+     * @param string $scenario
+     * @return object
+     */
+    public function createByScenario(array $data, string $scenario = 'default')
+    {
+        $this->model->scenario = $scenario;
+
+        return $this->create($data);
+    }
+
+    /**
+     *
+     * @param array $data
+     * @return object
+     */
+    public function createWithoutValidation(array $data)
+    {
+        $this->model->setAttributes($data);
+        $this->model->save(false);
+
+        return $this->model;
+    }
+
 
     /**
      * @param $id

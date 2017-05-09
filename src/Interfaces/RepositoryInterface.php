@@ -47,6 +47,18 @@ interface RepositoryInterface
      */
     public function createMany(array $data);
 
+    /**
+     * @param array $data
+     * @param string $scenario
+     * @return object
+     */
+    public function createByScenario(array $data, string $scenario = 'default');
+
+    /**
+     * @param array $data
+     * @return object
+     */
+    public function createWithoutValidation(array $data);
 
     /**
      * @param $id
