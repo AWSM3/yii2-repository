@@ -48,61 +48,67 @@ to the require section of your `composer.json` file.
 ### Awsm3\Yii2Repository\Interfaces\RepositoryInterface
 
 ```php
-    public function with(array $with = []);
+        public function with(array $with = []);
+        
+        public function columns(array $columns = ['*']);
 
-    public function columns(array $columns = ['*']);
+        public function limit($limit = 10);
 
-    public function limit($limit = 10);
+        public function orderBy($orderBy, $sort = 'DESC');
 
-    public function orderBy($orderBy, $sort = 'DESC');
+        public function makeModel();
 
-    public function create(array $data);
+        public function create(array $data);
 
-    public function createMany(array $data);
+        public function createMany(array $data);
 
-    public function findOneById($id, $returnArray = false);
+        public function createByScenario(array $data, string $scenario = 'default');
 
-    public function findOneBy($key, $value, $operation = '=', $returnArray = false);
+        public function createWithoutValidation(array $data);
 
-    public function findManyBy($key, $value, $operation = '=', $withPagination = true, $returnArray = false);
+        public function findOneById($id, $returnArray = false);
 
-    public function findManyByIds(array $ids, $withPagination = true, $returnArray = false);
+        public function findOneBy($key, $value, $operation = '=', $returnArray = false);
 
-    public function findAll($withPagination = true, $returnArray = false);
+        public function findManyBy($key, $value, $operation = '=', $withPagination = true, $returnArray = false);
 
-    public function findManyByCriteria(array $criteria = [], $withPagination = true, $with = [], $returnArray = false);
+        public function findManyByIds(array $ids, $withPagination = true, $returnArray = false);
 
-    public function updateOneById($id, array $data = []);
+        public function findAll($withPagination = true, $returnArray = false);
 
-    public function updateOneBy($key, $value, array $data = []);
+        public function findOneByCriteria(array $criteria = [], array $with = [], bool $returnArray = false);
 
-    public function updateOneByCriteria(array $criteria, array $data = []);
+        public function findManyByCriteria(array $criteria = [], $withPagination = true, $with = [], $returnArray = false);
 
-    public function updateManyBy($key, $value, array $data = [], $operation = '=');
+        public function updateOneById($id, array $data = []);
 
-    public function updateManyByCriteria(array $criteria = [], array $data = []);
+        public function updateOneBy($key, $value, array $data = []);
 
-    public function updateManyByIds(array $ids, array $data = []);
+        public function updateOneByCriteria(array $criteria, array $data = []);
 
-    public function deleteOneById($id);
+        public function updateManyBy($key, $value, array $data = [], $operation = '=');
 
-    public function allExist(array $ids);
+        public function updateManyByCriteria(array $criteria = [], array $data = []);
 
-    public function deleteOneBy($key, $value, $operation = '=');
+        public function updateManyByIds(array $ids, array $data = []);
 
-    public function deleteOneByCriteria(array $criteria = []);
+        public function allExist(array $ids);
+    
+        public function deleteOneBy($key, $value, $operation = '=');
 
-    public function deleteManyBy($key, $value, $operation = '=');
+        public function deleteOneByCriteria(array $criteria = []);
 
-    public function deleteManyByCriteria(array $criteria = []);
+        public function deleteManyBy($key, $value, $operation = '=');
 
-    public function searchByCriteria();
-
-    public function deleteManyByIds(array $ids);
-
-    public function inc($id, $field, $count = 1);
-
-    public function dec($id, $field, $count = 1);
+        public function deleteManyByCriteria(array $criteria = []);
+    
+        public function searchByCriteria();
+    
+        public function deleteManyByIds(array $ids);
+    
+        public function inc($id, $field, $count = 1);
+    
+        public function dec($id, $field, $count = 1);
 ```
  
 ## Usage

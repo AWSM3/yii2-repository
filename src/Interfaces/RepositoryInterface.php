@@ -3,6 +3,8 @@ declare(strict_types=1);
 
 namespace Awsm3\Yii2Repository\Interfaces;
 
+use Awsm3\Yii2Repository\Exceptions\RepositoryException;
+
 /**
  * Interface RepositoryInterface
  * @package Awsm3\Yii2Repository\Interfaces
@@ -33,6 +35,12 @@ interface RepositoryInterface
      * @return $this
      */
     public function orderBy($orderBy, $sort = 'DESC');
+
+    /**
+     * @return mixed
+     * @throws RepositoryException
+     */
+    public function makeModel();
 
     /**
      * @param array $data

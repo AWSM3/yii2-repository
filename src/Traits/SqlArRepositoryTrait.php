@@ -239,6 +239,23 @@ trait SqlArRepositoryTrait
     }
 
     /**
+     * @return ActiveRecord
+     * @throws RepositoryException
+     */
+    public function makeModel()
+    {
+        $newModel = new $this->modelClass;
+
+        if (!$newModel instanceof ActiveRecord) {
+            throw new RepositoryException(
+                "Class {$this->model} must be an instance of yii\\db\\ActiveRecord;"
+            );
+        }
+
+        return $this->model = $newModel;
+    }
+
+    /**
      * @param array $data
      * @return mixed
      */
